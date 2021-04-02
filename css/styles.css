@@ -1,0 +1,63 @@
+@import './reset.css';
+
+/* задать размеры элементам:
+ - наследовать (только для прямых потомков подходит)
+ - классы-мофификаторы (нужно лезть в html)
+ - css-переменные */
+
+:root {
+  --user-card-height: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightblue;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userCard {
+  min-width: 300px;
+  width: 100%;
+  max-width: 600px;
+  height: var(--user-card-height);
+  /* margin: 0 auto; */
+  /* border: 1px solid rgb(133, 130, 130); */
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.userCard > div {
+  display: inline-block;
+}
+
+.userImageContainer {
+  width: var(--user-card-height);
+  height: var(--user-card-height);
+  overflow: hidden;
+}
+
+.userImageContainer > img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+.userInfoContainer {
+  text-align: center;
+  width: calc(100% - var(--user-card-height));
+  vertical-align: top;
+}
+
+.userStatContainer {
+}
+
+.userStatItem {
+  display: inline-block;
+}
